@@ -12,22 +12,16 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 
 injectTapEventPlugin();
 
-const chatApp = () =>
-  <MuiThemeProvider>
-    <Chat />
-  </MuiThemeProvider>
-
-const renderer = function(id) {
-  const MOUNT_NODE = document.getElementById(id);
+const renderer = function(selector, styles) {
+  const MOUNT_NODE = document.querySelector(selector);
 
   ReactDOM.render(
     <MuiThemeProvider>
-      <Chat />
+      <Chat styles={styles} />
     </MuiThemeProvider>,
     MOUNT_NODE
   );
 };
 
 window.chatApp = {};
-window.chatApp.app = chatApp;
-window.chatApp.renderer = renderer;
+window.react.chatApp.renderer = renderer;

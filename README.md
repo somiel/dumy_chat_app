@@ -6,6 +6,7 @@ Dummy chat
 ```
 npm/yarn install
 npm/yarn start
-import the script into your app (locally available on 'http://0.0.0.0:3005/build/bundle.js')
-call window.chatApp.renderer("id")
+import the script into your monolith app (locally available on 'http://0.0.0.0:%port%/build/bundle.js')
+add a container node into monolith app template
+call window.react.chatApp.renderer(%selector%) from monolith
 ```
